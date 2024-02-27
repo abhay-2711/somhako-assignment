@@ -3,6 +3,6 @@ interface Note {
     title: string;
     content: string;
     timestamp: number;
-    color: string;
-    image: File | null | string;
-}
+    colour: string;
+    image: string | StaticImport;
+} 
