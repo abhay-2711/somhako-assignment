@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header>
-    <div className='flex flex-col md:flex-row items-center pl-16 pr-10 md:h-20 bg-white border-b-2'>
+    <div className='flex flex-col md:flex-row items-center md:pl-16 md:pr-10 md:h-20 bg-white border-b-2'>
       <div className='w-42 flex items-center justify-center'>
       <Image
         src={somhako_logo}
@@ -23,12 +23,12 @@ const Header = () => {
       </div>
 
       <div className='flex flex-col md:flex-row items-center md:space-y-0 md:space-x-5 flex-1 justify-end w-full gap-5'>
-        <form className='flex items-center space-x-5 bg-white rounded-md p-1 pl-5 shadow-md flex-1 md:flex-initial'>
+        <form className='sm:flex items-center space-x-5 bg-white rounded-md p-1 pl-5 shadow-md flex-1 md:flex-initial hidden'>
             <MagnifyingGlassIcon className='h-6 w-6 text-gray-400' />
             <input 
               type="text" 
               placeholder='Search' 
-              className='flex-1 outline-none p-2' 
+              className='flex-1 outline-none p-1 md:p-2' 
             />
             <button type='submit' hidden>Search</button>
         </form>

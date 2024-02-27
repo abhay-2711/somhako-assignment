@@ -4,5 +4,5 @@ interface Note {
     content: string;
     timestamp: number;
     colour: string;
-    image: string | StaticImport;
+    image: string | null;
 } 
