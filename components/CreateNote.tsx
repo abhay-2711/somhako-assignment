@@ -1,7 +1,9 @@
 "use client"
 
+import { useNoteStore } from '@/store/NoteStore';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const colors = [
     "rgb(252 165 165)",
@@ -11,13 +13,18 @@ const colors = [
     "rgb(249 168 212)",
     "rgb(216 180 254)"
 ]
-
+    
 const CreateNote = () => {
 
+    const router = useRouter();
+
     const [imagePreview, setImagePreview] = useState<string | null>(null);
-    const [colour, setColour] = useState<string>('');
+    const [colour, setColour] = useState<string>('rgb(252 165 165)');
     const [title, setTitle] = useState<string>('');
     const [content, setContent] = useState<string>('');
+
+    const [notes, addNote] = useNoteStore((state) => 
+        [state.notes, state.addNote]);
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -31,11 +38,26 @@ const CreateNote = () => {
     }
 
     const handleColourChange = (color: string) => {    
-        setColour(colour);
+        setColour(color);
     }
 
-    const handleSubmit = () => {
-        
+    const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault();
+
+        const note = {
+            id: notes.length + 1,
+            title,
+            content,
+            colour,
+            image: imagePreview,
+            timestamp: new Date(Date.now())
+        }
+        addNote(note);
+        router.push('/');
+        setTitle('');
+        setContent('');
+        setImagePreview(null);
+        setColour('rgb(252 165 165)');
     }
 
   return (
@@ -78,16 +100,15 @@ const CreateNote = () => {
             </div>
             <div className='mt-5 flex flex-col'>
                 <label htmlFor='colour' className='font-bold'>Choose Colour</label>
-                <div className='flex mt-2 gap-3'>
+                <div className='flex mt-2 gap-3'> 
                     {colors.map((color, index) => (
-                        <div key={index} onClick={() => handleColourChange(color)} style={{ backgroundColor: color }} className={`w-8 h-8 rounded-full cursor-pointer ${color===colour ? 'border-2 bg-black' : ''}`}>
+                        <div key={index} style={{ backgroundColor: color }} className={`w-8 h-8 rounded-full cursor-pointer ${color===colour ? 'border-2 border-[#000]' : 'border-none'}`} onClick={() => handleColourChange(color)}>
                         </div>
                     ))}
-                    
                 </div>
             </div>
             <div className='mt-10'>
-                <button className='bg-[#0055d1] text-white w-full h-11 rounded-md font-bold' onClick={handleSubmit}>Create Note</button>
+                <button className='bg-[#0055d1] text-white w-full h-11 rounded-md font-bold' onClick={(e) => handleSubmit(e)}>Create Note</button>
             </div>
         </div>
       </div>

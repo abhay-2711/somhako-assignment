@@ -1,12 +1,16 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Note from './Note';
 import { useNoteStore } from '@/store/NoteStore';
 
 const Main = () => {
 
   const notes = useNoteStore((state) => state.notes);
+
+  useEffect(() => {
+    console.log('notes', notes);
+  }, [notes]);
 
   return (
     <div className='flex flex-col'>
