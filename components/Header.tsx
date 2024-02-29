@@ -33,7 +33,7 @@ const Header = () => {
             <button type='submit' hidden>Search</button>
         </form>
 
-        <Avatar name='Abhay Singh' round size='50' color='#0055d1' className='md:mt-0'  />
+        <Avatar name='Abhay Singh' round size='50' color='#0055d1' className='md:mt-0 hidden md:flex'  />
       </div>
       
     </div>
