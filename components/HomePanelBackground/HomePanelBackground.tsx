@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './HomePageBackground.module.css'
+import styles from './HomePanelBackground.module.css'
 
-const HomePageBackground= () => {
+const HomePanelBackground= () => {
   return (
-  <section className={`${styles.container} ${styles.gradient}`}>
+    <section className={styles.container}>
   {/*?xml version="1.0" encoding="utf-8"?*/}
   <svg
     version="1.1"
@@ -12,7 +12,6 @@ const HomePageBackground= () => {
     x="0px"
     y="0px"
     viewBox="0 0 3005.2 1200"
-    style={{ enableBackground: "new 0 0 3005.2 2056.7" } as any}
     xmlSpace="preserve"
   >
     <g id="Layer_2" className="st0">
@@ -3985,4 +3984,4 @@ const HomePageBackground= () => {
   )
 }
 
-export default HomePageBackground;
+export default HomePanelBackground

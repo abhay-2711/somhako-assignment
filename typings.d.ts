@@ -2,7 +2,7 @@ interface Note {
     id: number;
     title: string;
     content: string;
-    timestamp: Date;
+    timestamp: string;
     colour: string;
     image: string | null;
 } 

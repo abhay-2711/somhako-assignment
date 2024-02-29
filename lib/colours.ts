@@ -1,6 +1,6 @@
 export const colours: string[] = [
-	"blue-90",
-	"yellow-70",
-	"violet-80",
-	"pink-70",
+	"rgb(252 165 165)",
+	"rgb(147 197 253)",
+	"rgb(134 239 172)",
+	"rgb(216 180 254)",
 ];

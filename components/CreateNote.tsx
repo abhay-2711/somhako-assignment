@@ -74,7 +74,7 @@ const CreateNote = () => {
             content,
             colour,
             image: imagePreview,
-            timestamp: new Date(Date.now())
+            timestamp: new Date(Date.now()).toDateString()
         }
         addNote(note);
         notify();
@@ -98,7 +98,7 @@ const CreateNote = () => {
           <div>Back</div>
         </button>
       </div>
-      <div className='flex flex-col mx-auto border border-[#EBEBEB] rounded-lg w-3/4 md:w-1/3 h-58 p-10 mt-10 bg-[#ffffff]'>
+      <div className='flex flex-col mx-auto border border-[#EBEBEB] rounded-lg w-3/4 md:w-1/3 p-10 mt-10 bg-[#ffffff]'>
         <div className='h-full'>
             <div className='h-18'>
                 <div className='font-bold text-2xl'>
