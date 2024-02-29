@@ -16,11 +16,11 @@ const Main = () => {
 
   return (
     <div className='flex flex-col'>
-      <div className='flex mr-20 ml-20 w-auto mt-10 justify-between'>
+      <div className='flex flex-col md:flex-row mr-20 ml-20 mt-10 justify-between'>
         <div className='inline-block font-bold text-4xl'>My Notes</div>
         <button
           onClick={handleCreate}
-          className='flex px-4 py-3 border rounded-lg gap-2 cursor-pointer bg-[#AF273E] text-white text-base'>
+          className='flex px-4 py-3 border mt-4 md:mt-0 rounded-lg gap-2 cursor-pointer bg-[#AF273E] text-white text-base'>
           <div>+</div>
           <div>Create new note</div>
         </button>

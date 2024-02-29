@@ -91,9 +91,9 @@ const CreateNote = () => {
 
   return (
     <div className='flex flex-col bg-[#000000CC] min-h-screen'>
-      <div className='flex mr-20 ml-20 w-auto mt-10 justify-between'>
+      <div className='flex flex-col md:flex-row mr-20 ml-20 w-auto mt-10 justify-between'>
         <h1 className='inline-block font-bold text-3xl md:text-4xl'>Create New Note</h1>
-        <button onClick={handleBack} className='flex px-4 py-3 border rounded-lg gap-2 cursor-pointer bg-[#AF273E] text-white text-base'>
+        <button onClick={handleBack} className='flex px-4 py-3 my-4 md:my-0 border rounded-lg gap-2 cursor-pointer bg-[#AF273E] text-white text-base'>
           <div>&lt;</div>
           <div>Back</div>
         </button>
